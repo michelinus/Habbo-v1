@@ -40,7 +40,7 @@ namespace ServerEngine
             Console.WriteLine("#  # #  # ##  ##   ##      ##  ### # #  ##  ### # # ");
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("                    © Michelinus ");
+            Console.WriteLine("                    © Michelinus forked from PrjOwnage! ");
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("'" + hotel_name + "'" + " e' stato avviato correttamente, buon divertimento!");
