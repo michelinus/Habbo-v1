@@ -1,26 +1,20 @@
-# Habbo v1
-fork from prjOwnage for the first version of Habbo.
+<img src="https://dumpshare.net/images/8923573server_5.png" align="right">
+# Habbo Server
+**C#** server or the **first version** of Habbo (v1).
 
-# HOW-TO: Compile Source:
-- Download Visual Studio or Visual C# 2010 Express.
+# HOW-TO 
+
+##Compile Source:
+- Download Visual Studio.
 - Import project solution.
 - Compile the code.
 
-# HOW-TO: Run the server:
-- Import "db.sql" in your MySQL server.
-- Create a file "Server.ini" and add this code:
+##Run the server:
+- Import "habbo.sql" in your MySQL server.
+- Go into bin/debug directory.
+- Execute "Habbo Server.exe".
+- Wait it when it closes.
+- Edit "Server.ini" file with your values.
 
-```
-[MySQL]
-hostname= Your MySQL Hostname
-username= Your MySQL Username
-password= Your MySQL Password
-database= Your MySQL Database
-port=3306
-
-[Server]
-ip= Your Server IP
-port=37120 #You can leave it 37120 or you can change it if you wish.
-```
-- Go into bin/debug directory and put Server.ini in the same directory of "Habbo v1.exe".
-- Execute "Habbo v1.exe".
+# License
+Habbo Server is licensed under the GPLv3 license.

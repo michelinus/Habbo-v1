@@ -23,17 +23,19 @@ namespace ServerEngine.Sockets
             try
             {
                 //
-                DatabaseClient dbClient = Server.GetDatabase().GetClient();
                 var config = new IniFile("Server.ini");
+                DatabaseClient dbClient = Server.GetDatabase().GetClient();
                 string svIP = config.Read("ip", "Server");
                 string svPort = config.Read("port", "Server");
+                string debug = config.Read("enabled", "Debug");
+                bool enabledebug = bool.Parse(debug);
                 //
 
                 System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
                 byte[] tmp_hello = enc.GetBytes(PacketHelper.Build_Send("HELLO" + (char)13).ToCharArray());
-
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine("<-- HELLO {13} ");
+
+                if(enabledebug == true) Console.WriteLine("<-- HELLO {13} ");
                 Console.ForegroundColor = ConsoleColor.Gray;
 
                 Server.Users[ID].Sck.GetStream().Write(tmp_hello, 0, tmp_hello.Length);
@@ -52,7 +54,7 @@ namespace ServerEngine.Sockets
 
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         string PaketData_string2 = PaketData_string;
-                        Console.WriteLine("--> " + PaketData_string.Replace("\r", " {13} "));
+                        if (enabledebug == true) Console.WriteLine("--> " + PaketData_string.Replace("\r", " {13} "));
                         Console.ForegroundColor = ConsoleColor.Gray;
 
                         if (Server.Users[ID].name != null && Server.Users[ID].inroom == 0)
@@ -2063,7 +2065,7 @@ namespace ServerEngine.Sockets
                     }
                     Thread.Sleep(20);
                 }
-                Console.WriteLine("Test, Close: " + ID);
+                if (enabledebug == true) Console.WriteLine("Test, Close: " + ID);
                 Send_Data_All("STATUS " + (char)13 + Server.Users[ID].name + " 0,0,99,2,2/mod 0/");
                 if (Server.Users[ID].inroom != 0 && Server.Users[ID].name != null)
                 {
@@ -2084,17 +2086,23 @@ namespace ServerEngine.Sockets
         
         private void Send_Data(string data)
         {
+            var config = new IniFile("Server.ini");
+            String debug = config.Read("enabled", "Debug");
+            bool enabledebug = bool.Parse(debug);
             System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
             byte[] tmp = enc.GetBytes(PacketHelper.Build_Send(data).ToCharArray());
             Server.Users[ID].Sck.GetStream().Write(tmp, 0, tmp.Length);
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("<-- " + data.Replace("\r", " {13} "));
+            if (enabledebug == true) { Console.WriteLine("<-- " + data.Replace("\r", " {13} ")); };
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
         private void Send_Data_All(string data)
         {
+            var config = new IniFile("Server.ini");
+            String debug = config.Read("enabled", "Debug");
+            bool enabledebug = bool.Parse(debug);
             int i = 0;
             while (i < 150)
             {
@@ -2118,12 +2126,15 @@ namespace ServerEngine.Sockets
             }
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("<-- " + data.Replace("\r", " {13} "));
+            if (enabledebug == true) Console.WriteLine("<-- " + data.Replace("\r", " {13} "));
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
         private void Send_Data_Room(string data)
         {
+            var config = new IniFile("Server.ini");
+            String debug = config.Read("enabled", "Debug");
+            bool enabledebug = bool.Parse(debug);
             int i = 0;
             while (i < 150)
             {
@@ -2150,7 +2161,7 @@ namespace ServerEngine.Sockets
             }
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("<-- " + data.Replace("\r", " {13} "));
+            if (enabledebug == true) Console.WriteLine("<-- " + data.Replace("\r", " {13} "));
             Console.ForegroundColor = ConsoleColor.Gray;
         }
     }

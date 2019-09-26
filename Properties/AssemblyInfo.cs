@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ServerEngine.HabboServer.v1")]
-[assembly: AssemblyCopyright("© Michelinus 2017")]
+[assembly: AssemblyCopyright("© Michelinus 2019")]
 [assembly: AssemblyTrademark("©Habbo & ©Sulake")]
 [assembly: AssemblyCulture("")]
 
