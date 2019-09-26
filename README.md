@@ -1,20 +1,23 @@
-<img src="https://dumpshare.net/images/8923573server_5.png" align="right">
+<img src="https://dumpshare.net/images/8923573server_5.png" align="right" width=100px>
+
 # Habbo Server
-**C#** server or the **first version** of Habbo (v1).
+**Habbo Server** is a **C#** replication of the **first version** of Habbo (version 1).
 
-# HOW-TO 
+Currently the application doesn't work. It will be fixed when I'll have some free time! :)
 
-##Compile Source:
+# What can I do?
+
+## Compile Source:
 - Download Visual Studio.
 - Import project solution.
 - Compile the code.
 
-##Run the server:
-- Import "habbo.sql" in your MySQL server.
-- Go into bin/debug directory.
-- Execute "Habbo Server.exe".
+## Run the server:
+- Import **"habbo.sql"** in your MySQL server.
+- Go into **bin/debug** directory.
+- Execute **"Habbo Server.exe"**.
 - Wait it when it closes.
-- Edit "Server.ini" file with your values.
+- Edit **"Server.ini"** file with your values of your **MySQL** server.
 
 # License
-Habbo Server is licensed under the GPLv3 license.
+Habbo Server is licensed under the **GPLv3** license.
