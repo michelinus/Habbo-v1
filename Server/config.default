@@ -1,0 +1,13 @@
+[MySQL]
+hostname=localhost
+username=root
+password=
+database=
+port=3306
+
+[Server]
+ip=127.0.0.1
+port=37120
+
+[Debug]
+enabled=false

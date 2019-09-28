@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Set 26, 2019 alle 20:42
+-- Creato il: Set 28, 2019 alle 11:06
 -- Versione del server: 10.4.6-MariaDB
 -- Versione PHP: 7.3.9
 
@@ -245,10 +245,7 @@ CREATE TABLE `rooms` (
 --
 
 CREATE TABLE `settings` (
-  `ID` int(3) NOT NULL,
-  `ip` varchar(15) DEFAULT NULL,
-  `srvport` int(5) DEFAULT NULL,
-  `debug` varchar(5) DEFAULT NULL,
+  `id` int(3) NOT NULL,
   `hotel_name` varchar(50) DEFAULT NULL,
   `max_users` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -257,8 +254,8 @@ CREATE TABLE `settings` (
 -- Dump dei dati per la tabella `settings`
 --
 
-INSERT INTO `settings` (`ID`, `ip`, `srvport`, `debug`, `hotel_name`, `max_users`) VALUES
-(1, '127.0.0.1', 37120, 'false', 'Habbo Hotel', 5000);
+INSERT INTO `settings` (`id`, `hotel_name`, `max_users`) VALUES
+(1, 'Habbo Hotel', 5000);
 
 -- --------------------------------------------------------
 
@@ -401,7 +398,8 @@ ALTER TABLE `rooms`
 -- Indici per le tabelle `settings`
 --
 ALTER TABLE `settings`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indici per le tabelle `useritems`
@@ -501,7 +499,7 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT per la tabella `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT per la tabella `useritems`

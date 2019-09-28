@@ -63,9 +63,7 @@ namespace ServerEngine
             Console.WriteLine("");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("L'hotel avente nome " + "'" + hotel_name + "'" + " è stato avviato correttamente, buon divertimento!");
-            Console.WriteLine("Indirizzo IP: " + ip + " | " + "Porta Client: " + port + " | " + "Max Utenti: " + max_users + "!");
-            Console.WriteLine("");
-            Console.WriteLine("v1.0.0 - Compiled for you by Michelinus");
+            Console.WriteLine("Indirizzo IP: " + ip + " | " + "Max Utenti: " + max_users + "!");
             Console.WriteLine("");
 
             Thread t = new Thread(console_listener);
@@ -73,7 +71,7 @@ namespace ServerEngine
             while (true)
             {
                 Process pmemory = Process.GetCurrentProcess();
-                Console.Title = "| Emulatore avviato! - Server Name: " + hotel_name + " | " + "Client Port: " + port + " | " + "RAM: " + pmemory.PrivateMemorySize64 / 1024 / 1024 +" Mb" + " | ";
+                Console.Title = "| Memoria occupata dal server: " + pmemory.PrivateMemorySize64 / 1024 / 1024 +"Mb" + " | ";
                 Thread.Sleep(100);
             }
         }

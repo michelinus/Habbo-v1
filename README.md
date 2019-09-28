@@ -3,8 +3,6 @@
 # Habbo Server
 **Habbo Server** is a **C#** replication of the **first version** of Habbo (version 1).
 
-Currently the application doesn't work. It will be fixed when I'll have some free time! :)
-
 # What can I do?
 
 ## Compile Source:
